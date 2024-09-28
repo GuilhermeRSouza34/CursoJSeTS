@@ -1,11 +1,11 @@
 const nome = 'João';
 console.log(nome);
 
-const primeiroNumero = 1;
-const segundoNumero = 2;
-const conta = primeiroNumero * primeiroNumero;
-const conta2 = primeiroNumero + primeiroNumero;
-const conta3 = primeiroNumero - primeiroNumero;
-console.log(conta);
-console.log(conta2);
-console.log(conta3);
+const primeiroNumero = 5;
+const segundoNumero = 10;
+const resultado = primeiroNumero + segundoNumero;
+const resultadoDuplicado = resultado * 2;
+let resultadoTriplicado = resultado * 3;
+resultadoTriplicado = resultadoTriplicado + 5;
+
+console.log(primeiroNumero + segundoNumero);
