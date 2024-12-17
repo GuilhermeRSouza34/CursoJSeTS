@@ -10,4 +10,25 @@ calcularBtn.addEventListener("click", () => {   // Adiciona um evento de clique 
     const sobrenome = document.getElementById("sobrenome").ariaValueMax.trim();
     const peso = parseFloat(document.getElementById("peso").value);
     const altura = parseFloat(document.getElementById("altura").value);
+
+    if (!nome ||!sobrenome ||isNaN(peso) ||isNaN(altura)) {
+        resultadoDiv.innerText = "Por favor, preencha todos os campos corretamente.";
+        resultadoDiv.style.color = "red";   // Exibe mensagem de erro em vermelho
+        return;
+    }
+
+    const imc = (peso / (altura * altura)).toFixed(2);  // Calcula o IMC usando a formula
+
+    let classificacao;  // Função para classficar o IMC com base no valor calculado
+    if (imc < 18.5) {
+        classificacao = "Abaixo do peso";
+    } else if (imc < 24.9) {
+        classificacao = "Peso normal";
+    } else if (imc < 29.9) {
+        classificacao = "Sobrepeso";
+    } else {
+        classificacao = "Obesidade";
+    }
+
+    
 })
