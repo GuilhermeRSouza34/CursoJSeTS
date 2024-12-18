@@ -50,3 +50,18 @@ function criaData(data) {
 }
 
 p.innerHTML = criaData(data); // Chama a função criaData passando a data atual
+
+
+/*
+FUNÇÃO MENOR QUE DA O MESMO RESULTADO
+
+const h1 = dosument.querySelector('.container h1');
+const data = new Date();
+const opcoes = {
+    dateStyle: 'full',
+    timeStyle: 'short'
+};
+
+h1.innerHTML = data.toLocaleString('pt-BR', opcoes);
+
+*/
