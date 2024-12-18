@@ -1,0 +1,33 @@
+/* Aplica estilo geral à página */
+body {
+    font-family: Arial, sans-serif; /* Define a fonte */
+    margin: 0;                      /* Remove margens padrão */
+    padding: 0;                     /* Remove preenchimento padrão */
+    display: flex;                  /* Habilita o uso de flexbox */
+    justify-content: center;        /* Centraliza horizontalmente o conteúdo */
+    align-items: center;            /* Centraliza verticalmente o conteúdo */
+    height: 100vh;                  /* Define a altura da página como 100% da altura da tela */
+    background-color: #f4f4f9;    /* Define a cor de fundo */
+}
+
+/* Estilo do contêiner principal */
+.container {
+    text-align: center;                             /* Centraliza o texto */
+    background: #ffffff;                          /* Define a cor de fundo do contêiner */
+    padding: 20px;                                  /* Adiciona espaço interno ao contêiner */
+    border-radius: 10px;                            /* Arredonda os cantos */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Adiciona uma sombra ao contêiner */
+}
+
+/* Estilo do título */
+h1 {
+    font-size: 24px;        /* Define o tamanho da fonte */
+    color: #333;          /* Define a cor do texto */
+    margin-bottom: 10px;    /* Adiciona espaço abaixo do título */
+}
+
+/* Estilo do parágrafo que exibe a data */
+.data {
+    font-size: 18px; /* Define o tamanho da fonte */
+    color: #555;   /* Define a cor do texto */
+}

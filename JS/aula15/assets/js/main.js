@@ -1,86 +1,52 @@
-const h1 = document.querySelector('.container h1');
-const data = new Date();
+// Seleciona os elementos do DOM
+const h1 = document.querySelector('.container h1');   // Título principal
+const p = document.querySelector('.container .data'); // Parágrafo onde a data será exibida
+const data = new Date();                              // Obtém a data e hora atual
 
+// Função para obter o nome do dia da semana com base no número retornado por getDay()
 function getDiaSemanaTexto(diaSemana) {
-    let diaSemanaTexto;
-
     switch (diaSemana) {
-        case 0:
-            diaSemanaTexto = 'Domingo';
-            return diaSemanaTexto;
-        case 1:
-            diaSemanaTexto = 'Segunda-feira';
-            return diaSemanaTexto;
-        case 2:
-            diaSemanaTexto = 'Terça-feira';
-            return diaSemanaTexto;
-        case 3:
-            diaSemanaTexto = 'Quarta-feira';
-            return diaSemanaTexto;
-        case 4:
-            diaSemanaTexto = 'Quinta-feira';
-            return diaSemanaTexto;
-        case 5:
-            diaSemanaTexto = 'Sexta-feira';
-            return diaSemanaTexto;
-        case 6:
-            diaSemanaTexto = 'Sábado';
-            return diaSemanaTexto;
-        default:
-            diaSemanaTexto = 'Dia inválido';
+        case 0: return 'Domingo';       // Se for 0, retorna "Domingo"
+        case 1: return 'Segunda-feira'; // Se for 1, retorna "Segunda-feira"
+        case 2: return 'Terça-feira';
+        case 3: return 'Quarta-feira';
+        case 4: return 'Quinta-feira';
+        case 5: return 'Sexta-feira';
+        case 6: return 'Sábado';
+        default: return 'Dia inválido'; // Valor padrão para entradas inválidas
     }
 }
 
+// Função para obter o nome do mês com base no número retornado por getMonth()
 function getNomeMes(numeroMes) {
-    let nomeMes;
-
     switch (numeroMes) {
-        case 0:
-            numeroMes = 'Janeiro';
-            return numeroMes;
-        case 1:
-            numeroMes = 'Fevereiro';
-            return numeroMes;
-        case 2:
-            numeroMes = 'Março';
-            return numeroMes;
-        case 3:
-            numeroMes = 'Abril';
-            return numeroMes;
-        case 4:
-            numeroMes = 'Maio';
-            return numeroMes;
-        case 5:
-            numeroMes = 'Junho';
-            return numeroMes;
-        case 6:
-            numeroMes = 'Julho';
-            return numeroMes;
-        case 7:
-            numeroMes = 'Agosto';
-            return numeroMes;
-        case 8:
-            numeroMes = 'Setembro';
-            return numeroMes;
-        case 9:
-            numeroMes = 'Outubro';
-            return numeroMes;
-        case 10:
-            numeroMes = 'Novembro';
-            return numeroMes;
-        case 11:
-            numeroMes = 'Dezembro';
-            return numeroMes;
-        default:
-            numeroMes = 'Mês inválido';
+        case 0: return 'Janeiro';
+        case 1: return 'Fevereiro';
+        case 2: return 'Março';
+        case 3: return 'Abril';
+        case 4: return 'Maio';
+        case 5: return 'Junho';
+        case 6: return 'Julho';
+        case 7: return 'Agosto';
+        case 8: return 'Setembro';
+        case 9: return 'Outubro';
+        case 10: return 'Novembro';
+        case 11: return 'Dezembro';
+        default: return 'Mês inválido'; // Valor padrão para entradas inválidas
     }
 }
 
+// Função para formatar e criar a data completa em texto
 function criaData(data) {
-    const diaSemana = data.getDay();
-    const numeroMes = data.getMonth();
+    const diaSemana = getDiaSemanaTexto(data.getDay()); // Obtém o nome do dia da semana
+    const numeroMes = getNomeMes(data.getMonth());      // Obtém o nome do mês
+    const dia = data.getDate();                         // Obtém o número do dia do mês
+    const ano = data.getFullYear();                     // Obtém o ano com quatro dígitos
+    const hora = data.getHours();                       // Obtém a hora atual
+    const minutos = data.getMinutes();                  // Obtém os minutos atuais
 
-    const nomeDia = getDiaSemanaTexto();
+    // Formata a data no formato desejado e retorna
+    return `${diaSemana}, ${dia} de ${numeroMes} de ${ano} - ${hora}:${minutos < 10 ? '0' + minutos : minutos}`;
 }
 
-h1.innerHTML = getDiaSemanaTexto(data.getDay());
+p.innerHTML = criaData(data); // Chama a função criaData passando a data atual
