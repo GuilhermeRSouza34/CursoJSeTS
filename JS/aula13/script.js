@@ -40,3 +40,12 @@ calcularBtn.addEventListener("click", () => {   // Adiciona um evento de clique 
     atualizarLista(); // Atualiza a lista de dados salvos
 });
 
+function atualizarLista() {
+    listaDados.innerHTML = "";  // Limpa a lista antes de adicionar novos dados
+
+    dadosUsuario.forEach((dados) => {  // Itera sobre cada objeto de dados do array
+        const li = document.createElement("li");  // Cria um item na lista
+        li.textContent = `${dados.nome} ${dados.sobrenome}: IMC: ${dados.imc} (${dados.classificacao})`;  // Adiciona o texto do item
+        listaDados.appendChild(li);  // Adiciona o item à lista
+    });
+}
