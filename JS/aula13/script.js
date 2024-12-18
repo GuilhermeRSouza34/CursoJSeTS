@@ -30,5 +30,13 @@ calcularBtn.addEventListener("click", () => {   // Adiciona um evento de clique 
         classificacao = "Obesidade";
     }
 
-    
-})
+    resultadoDiv.textContent = `IMC de ${nome} ${sobrenome}: ${imc} (${classificacao})`;
+    resultadoDiv.style.color = "green"; // Exibe o resultado em verde
+
+    const dados = { nome, sobrenome, peso, altura, imc, classificacao };  // Cria um objeto com os dados do usuario e o resultado do IMC
+
+    dadosUsuario.push(dados);  // Adiciona o novo objeto ao array de dados
+
+    atualizarLista(); // Atualiza a lista de dados salvos
+});
+
