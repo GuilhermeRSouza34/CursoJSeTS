@@ -1,0 +1,25 @@
+{
+  "name": "meu-app-js",
+  "version": "1.0.0",
+  "description": "Um aplicativo JavaScript de exemplo",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.64.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^3.11.2",
+    "jest": "^27.0.6"
+  }
+}
