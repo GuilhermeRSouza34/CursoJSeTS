@@ -1,0 +1,21 @@
+{
+  "name": "meu-app-ts",
+  "version": "1.0.0",
+  "description": "Um aplicativo básico em TypeScript.",
+  "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/meu-app-ts.git"
+  },
+  "author": "Seu Nome",
+  "license": "MIT"
+}
