@@ -1,0 +1,12 @@
+{
+  "name": "cursojsets",
+  "version": "1.0.0",
+  "description": "Este repositório documenta minha jornada de aprendizado no curso de **Desenvolvedor JavaScript e TypeScript Completo**, explorando desde conceitos básicos até tópicos avançados em ambas as linguagens.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

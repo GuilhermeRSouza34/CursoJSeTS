@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/cursojssets@1.0.0",
+            "preLaunchTask": "npm-run",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/calculadora-geometrica-ts",
+            "preLaunchTask": "npm-init",
+            "internalConsoleOptions": "neverOpen"
+        }
+    ]
+}

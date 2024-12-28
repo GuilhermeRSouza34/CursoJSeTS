@@ -1,0 +1,43 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "npm-init",
+			"command": "npm",
+			"args": [
+				"init",
+				"-y"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm-run",
+			"command": "npm",
+			"args": [
+				"run",
+				"${input:scriptName}"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		},
+		{
+			"type": "shell",
+			"label": "npm-install",
+			"command": "npm",
+			"args": [
+				"install"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/calculadora-geometrica-ts"
+			},
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}
