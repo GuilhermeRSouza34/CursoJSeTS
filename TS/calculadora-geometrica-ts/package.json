@@ -1,0 +1,21 @@
+{
+  "name": "calculadora-geometrica-ts",
+  "version": "1.0.0",
+  "description": "Um aplicativo para calcular a área de formas geométricas em TypeScript.",
+  "main": "src/app.ts",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "@types/node": "^14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GuilhermeRSouza34/calculadora-geometrica-ts.git"
+  },
+  "author": "Guilherme Rodrigues de Souza",
+  "license": "MIT"
+}
