@@ -15,6 +15,30 @@ async function fetchExchangeRate(fromCurrency, toCurrency) {
     }
 }
 
+function saveToHistory(conversion) {
+    const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    history.unshift(conversion); // Adiciona ao início do histórico
+    if (history.length > 5) history.pop(); // Mantém no máximo 5 itens
+    localStorage.setItem('conversionHistory', JSON.stringify(history));
+}
+
+function loadHistory() {
+    const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    const historyElement = document.getElementById('history');
+    historyElement.innerHTML = '';
+
+    if (history.length === 0) {
+        historyElement.textContent = 'Nenhum histórico disponível.';
+        return;
+    }
+
+    history.forEach(item => {
+        const historyItem = document.createElement('p');
+        historyItem.textContent = item;
+        historyElement.appendChild(historyItem);
+    });
+}
+
 document.getElementById('convert-button').addEventListener('click', async () => {
     const fromCurrency = document.getElementById('from-currency').value;
     const toCurrency = document.getElementById('to-currency').value;
@@ -32,8 +56,16 @@ document.getElementById('convert-button').addEventListener('click', async () => 
 
     if (exchangeRate) {
         const convertedAmount = (amount * exchangeRate).toFixed(2);
-        resultElement.textContent = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        const resultText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        resultElement.textContent = resultText;
+
+        // Salva no histórico
+        saveToHistory(resultText);
+        loadHistory();
     } else {
         resultElement.textContent = "Erro ao buscar as taxas de câmbio. Tente novamente mais tarde.";
     }
 });
+
+// Carrega o histórico ao iniciar
+loadHistory();
