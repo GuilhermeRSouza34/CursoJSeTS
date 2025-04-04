@@ -9,6 +9,13 @@
 <body>
     <div class="container">
         <h1>Conversor de Moedas</h1>
+        <div class="language-selector">
+            <label for="language">Idioma:</label>
+            <select id="language">
+                <option value="pt" selected>Português</option>
+                <option value="en">English</option>
+            </select>
+        </div>
         <form id="converter-form">
             <div class="form-group">
                 <label for="from-currency">De:</label>
@@ -38,6 +45,11 @@
             <div id="history"></div>
         </div>
     </div>
+    <script>
+        document.getElementById('language').addEventListener('change', (event) => {
+            translateUI(event.target.value);
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

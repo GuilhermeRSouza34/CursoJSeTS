@@ -101,3 +101,21 @@ button:hover {
     font-size: 1rem;
     color: #555;
 }
+
+.language-selector {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.language-selector label {
+    font-size: 1rem;
+    color: #555;
+    margin-right: 10px;
+}
+
+.language-selector select {
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
