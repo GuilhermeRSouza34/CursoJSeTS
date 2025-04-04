@@ -5,67 +5,72 @@ async function fetchExchangeRate(fromCurrency, toCurrency) {
     try {
         const response = await fetch(url);
         if (!response.ok) {
-            throw new Error('Erro ao buscar as taxas de câmbio.');
+            throw new Error('Erro ao buscar as taxas de câmbio.');response.statusText}`);
         }
         const data = await response.json();
         return data.conversion_rates[toCurrency];
-    } catch (error) {
+    } catch (error) { Error(`Taxa de câmbio não encontrada para ${toCurrency}.`);
         console.error(error);
-        return null;
-    }
-}
-
+        return null;conversion_rates[toCurrency];
+    } catch (error) {
+}       console.error(error);
+        throw new Error('Não foi possível obter as taxas de câmbio. Verifique sua conexão ou tente novamente mais tarde.');
 function saveToHistory(conversion) {
     const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
     history.unshift(conversion); // Adiciona ao início do histórico
     if (history.length > 5) history.pop(); // Mantém no máximo 5 itens
-    localStorage.setItem('conversionHistory', JSON.stringify(history));
-}
-
-function loadHistory() {
+    localStorage.setItem('conversionHistory', JSON.stringify(history));)) || [];
+}   history.unshift(conversion); // Adiciona ao início do histórico
+    if (history.length > 5) history.pop(); // Mantém no máximo 5 itens
+function loadHistory() {('conversionHistory', JSON.stringify(history));
     const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
     const historyElement = document.getElementById('history');
     historyElement.innerHTML = '';
-
-    if (history.length === 0) {
+    const history = JSON.parse(localStorage.getItem('conversionHistory')) || [];
+    if (history.length === 0) {ment.getElementById('history');
         historyElement.textContent = 'Nenhum histórico disponível.';
         return;
-    }
-
+    }f (history.length === 0) {
+        historyElement.textContent = 'Nenhum histórico disponível.';
     history.forEach(item => {
         const historyItem = document.createElement('p');
         historyItem.textContent = item;
         historyElement.appendChild(historyItem);
-    });
-}
-
+    }); const historyItem = document.createElement('p');
+}       historyItem.textContent = item;
+        historyElement.appendChild(historyItem);
 document.getElementById('convert-button').addEventListener('click', async () => {
     const fromCurrency = document.getElementById('from-currency').value;
     const toCurrency = document.getElementById('to-currency').value;
-    const amount = parseFloat(document.getElementById('amount').value);
-    const resultElement = document.getElementById('result');
-
-    if (isNaN(amount) || amount <= 0) {
+    const amount = parseFloat(document.getElementById('amount').value);nc () => {
+    const resultElement = document.getElementById('result');ncy').value;
+    const toCurrency = document.getElementById('to-currency').value;
+    if (isNaN(amount) || amount <= 0) {getElementById('amount').value);
         resultElement.textContent = "Por favor, insira um valor válido.";
-        return;
-    }
+        resultElement.className = 'error';
+        return;f (isNaN(amount) || amount <= 0) {
+    }        resultElement.textContent = "Por favor, insira um valor válido.";
 
+    resultElement.textContent = "Carregando...";    }
+    resultElement.className = 'loading';
     resultElement.textContent = "Carregando...";
-
-    const exchangeRate = await fetchExchangeRate(fromCurrency, toCurrency);
-
-    if (exchangeRate) {
+    try {
+        const exchangeRate = await fetchExchangeRate(fromCurrency, toCurrency);
         const convertedAmount = (amount * exchangeRate).toFixed(2);
-        const resultText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
-        resultElement.textContent = resultText;
+        const resultText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;ngeRate).toFixed(2);
+        resultElement.textContent = resultText;        const resultText = `${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`;
+        resultElement.className = '';tent = resultText;
 
-        // Salva no histórico
-        saveToHistory(resultText);
+        // Salva no históricostórico
+        saveToHistory(resultText);ToHistory(resultText);
         loadHistory();
-    } else {
-        resultElement.textContent = "Erro ao buscar as taxas de câmbio. Tente novamente mais tarde.";
+    } catch (error) { catch (error) {
+        resultElement.textContent = error.message;     resultElement.textContent = error.message;
+        resultElement.className = 'error';    }
     }
 });
-
 // Carrega o histórico ao iniciar
-loadHistory();
+
+
+
+loadHistory();// Carrega o histórico ao iniciarloadHistory();

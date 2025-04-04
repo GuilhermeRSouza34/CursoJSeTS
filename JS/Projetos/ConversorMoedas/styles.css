@@ -66,6 +66,16 @@ button:hover {
     color: #333;
 }
 
+#result.loading {
+    color: #007bff;
+    font-style: italic;
+}
+
+#result.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
 #history-container {
     margin-top: 20px;
     text-align: left;
