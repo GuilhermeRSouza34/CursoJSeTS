@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Financeiro Pessoal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Controle Financeiro Pessoal</h1>
+    </header>
+    <main>
+        <section id="form-section">
+            <h2>Adicionar Transação</h2>
+            <form id="transaction-form">
+                <input type="text" id="description" placeholder="Descrição" required>
+                <input type="number" id="amount" placeholder="Valor (ex: -50 para despesa)" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+        <section id="transactions-section">
+            <h2>Transações</h2>
+            <ul id="transactions-list"></ul>
+        </section>
+        <section id="summary-section">
+            <h2>Resumo</h2>
+            <p id="balance">Saldo: R$ 0,00</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
