@@ -9,7 +9,6 @@ let food = {
     y: Math.floor(Math.random() * 20) * box,
 };
 
-// Detecta teclas pressionadas para mudar a direção
 document.addEventListener("keydown", (event) => {
     if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
     else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
@@ -17,11 +16,9 @@ document.addEventListener("keydown", (event) => {
     else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
 });
 
-// Função para desenhar a cobra e a comida
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Desenha a cobra
     for (let i = 0; i < snake.length; i++) {
         ctx.fillStyle = i === 0 ? "green" : "lightgreen";
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
@@ -29,7 +26,6 @@ function draw() {
         ctx.strokeRect(snake[i].x, snake[i].y, box, box);
     }
 
-    // Desenha a comida
     ctx.fillStyle = "red";
     ctx.fillRect(food.x, food.y, box, box);
 
